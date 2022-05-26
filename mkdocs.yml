@@ -47,3 +47,4 @@ extra_javascript:
 plugins:
   - search
   - roamlinks 
+  - callouts

@@ -1,4 +1,3 @@
----
 $$
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Corr}{Corr}
@@ -13,11 +12,12 @@ $$
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 $$
----
 # Long-time covariance calculation
 
-In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is
-![[Three unit rate model#^e90dac]]
+In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+$$
+\frac{d}{dt}\delta \mathbf{r} = -\underbrace{\pmb{\tau}^{-1}\pa{\mathbf{1}-\mathbf{W}}}_{\mathbf{M}}\delta \mathbf{r} + \underbrace{\sqrt{2} \pmb{\tau}^{-1} \mathbf{S}}_{\mathbf{D}} \pmb{\xi} = -\mathbf{M} \delta \mathbf{r} + \mathbf{D} \pmb{\xi}.
+$$
 The solution is obtained as
 $$
 	\delta \mathbf{r}(t) = \exp\set{-\mathbf{M}t}\delta\mathbf{r}(0) + \int_{-\infty}^{t}\exp\set{-\mathbf{M}\pa{t-t'}}\mathbf{D}\ \underbrace{d\mathbf{W}(t')}_{\boldsymbol{\xi}(t')}
@@ -211,10 +211,4 @@ $$
 We define the **long-time covariance** precisely this quantity:
 $$
 	\mathbf{C}:=\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh = \mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
-$$
-$$\def\RR{{\bf R}}
-   \def\bold#1{{\bf #1}}$$
-
-$$
-\RR{d}
 $$
