@@ -1,4 +1,4 @@
-site_name: obsidian-mkdocs template
+site_name: SCGB Notes
 
 theme:
     name: 'material'
@@ -7,7 +7,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
+      primary: gray
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
@@ -16,7 +16,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
+      primary: gray
       accent: blue
       toggle:
         icon: material/toggle-switch
@@ -26,7 +26,8 @@ theme:
 markdown_extensions:
   - footnotes
   # - attr_list
-  # - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+       generic: true
   # - pymdownx.superfences
   # - pymdownx.details
   # - pymdownx.magiclink
@@ -37,6 +38,11 @@ markdown_extensions:
   # - admonition
   - toc:
       permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 plugins:
   - search
