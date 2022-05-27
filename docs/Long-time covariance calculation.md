@@ -129,7 +129,30 @@ This is called the **Lyapunov equation**.
 > This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
 > 
 > Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
-^adf0fd
+
+
+> [!WARNING]- Remark.
+> In the last equality, we take limits 
+> $$ 
+> \lim_{t' \to -\infty} \exp\set{-\mathbf{M}(t-t')} \qquad \text{and} \qquad \lim_{t' \to -\infty} \exp\set{-\mathbf{M}^{\top}(t-t')}
+> $$ 
+> which is equivalent to looking at $\lim\limits_{t\to \infty} e^{\mathbf{M}t}$.  Suppose $\mathbf{M}$ is diagonalizable: 
+> $$
+> \mathbf{M} = \mathbf{U}^{-1}\boldsymbol{\Lambda}\mathbf{U}, \qquad \boldsymbol{\Lambda} = \text{diag}\pa{\lambda_1,\lambda_2,\ldots,\lambda_n}
+> $$
+> Then 
+> $$ e^{t\mathbf{M}} 
+> = \mathbf{U}^{-1}e^{t\boldsymbol{\Lambda}}\mathbf{U} 
+> = \mathbf{U}^{-1}\pa{\text{diag}\pa{e^{\lambda_1t},e^{\lambda_2t},\ldots,e^{\lambda_n t}}}\mathbf{U}.$$
+> This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
+> 
+> Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
+
+
+
+
+
+
 
 ## Time correlation matrix in stationary state. 
 

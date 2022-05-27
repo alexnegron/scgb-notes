@@ -36,7 +36,9 @@ markdown_extensions:
   #     custom_checkbox: true
 #  - pymdownx.emoji:
 #      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  # - admonition
+  - admonition
+  - nl2br
+  - pymdownx.details
   - toc:
       permalink: true
 
