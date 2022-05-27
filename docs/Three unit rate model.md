@@ -1,18 +1,3 @@
-
-$$
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\Corr}{Corr}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\prob}{\mathbb{P}}
-\DeclareMathOperator{\qprob}{\mathbb{Q}}
-\DeclareMathOperator{\E}{\mathbb{E}}
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\pa}[1]{\left(#1\right)}
-\newcommand{\ang}[1]{\left<#1\right>}
-\newcommand{\bra}[1]{\left[#1\right]}
-\newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\norm}[1]{\left\|#1\right\|}
-$$
 # Three unit rate model
 
 ## Model.
@@ -34,6 +19,7 @@ where:
 - $\bra{\cdot}_+ : \mathbb{R} \to \mathbb{R}$ is defined via $\bra{\cdot}\equiv \max\set{\cdot, 0}$ 
 
 We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never sampled for sufficiently strong inputs. In vector form, these equations are 
+
 
 $$\begin{aligned}
 	\underbrace{\begin{bmatrix}

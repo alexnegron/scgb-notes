@@ -11,10 +11,9 @@ $$
 \newcommand{\bra}[1]{\left[#1\right]}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
-$$
-# Long-time covariance calculation
+$$# Long-time covariance calculation
 
-In the [[Three unit rate model 1]],  we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
 $$
 \frac{d}{dt}\delta \mathbf{r} = -\underbrace{\pmb{\tau}^{-1}\pa{\mathbf{1}-\mathbf{W}}}_{\mathbf{M}}\delta \mathbf{r} + \underbrace{\sqrt{2} \pmb{\tau}^{-1} \mathbf{S}}_{\mathbf{D}} \pmb{\xi} = -\mathbf{M} \delta \mathbf{r} + \mathbf{D} \pmb{\xi}.
 $$
@@ -26,33 +25,33 @@ with mean $\ang{\delta \mathbf{r}(t)} = \exp\set{-\mathbf{M}t}\ang{\delta \mathb
 
 ## Long-time covariance function.
 
-We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[scgb-notes/docs/Long-time covariance calculation#^a3f76a|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
+We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[Computational Neuroscience/SURF, 2021-2022/Long-time covariance calculation#^adf0fd|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
 $$
 \Cov(\mathbf{r}(t), \mathbf{r}(s)) = \Cov(\mathbf{r}(t)-\mathbf{\bar{r}}, \mathbf{r}(s)-\mathbf{\bar{r}}) = \Cov(\delta \mathbf{r}(t), \delta\mathbf{r}(s)).
 $$
 Hence in the following calculations, for notational simplicity, we will use $\mathbf{r}(t)$ in place of $\delta \mathbf{r}(t)$.
 
 We make the notations
-
-$$\Cov(\mathbf{r}(t), \mathbf{r}(s)) =: \ang{\mathbf{r}(t), \mathbf{r}(s)} 
+$$
+	\Cov(\mathbf{r}(t), \mathbf{r}(s)) =: \ang{\mathbf{r}(t), \mathbf{r}(s)} 
 	= 
 	\E\bra{\pa{\mathbf{r}(t)-\E\bra{\mathbf{r}(t)}}\pa{\mathbf{r}(s)-\E\bra{\mathbf{r}(s)}}^\top} 
 	= 
-	\ang{\pa{\mathbf{r}(t) - \ang{\mathbf{r}(t)}}\pa{\mathbf{r}(s) - \ang{\mathbf{r}(s)}}^\top}.$$
-	
+	\ang{\pa{\mathbf{r}(t) - \ang{\mathbf{r}(t)}}\pa{\mathbf{r}(s) - \ang{\mathbf{r}(s)}}^\top}.
+$$
 For $s=t+\tau$ where $\tau > 0$, we have 
-
-$$\begin{aligned}
+$$
+\begin{aligned}
 	\ang{\pa{\mathbf{r}(t)-\ang{\mathbf{r}(t)}}\pa{\mathbf{r}(t+\tau)-\ang{\mathbf{r}(t+\tau)}}^\top}
 	&=
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)-\ang{\mathbf{r}(t)}\mathbf{r}^{\top}(t+\tau) - \mathbf{r}(t)\ang{\mathbf{r}(t+\tau)}^{\top} + \ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}\\
 	&=
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} - 2\underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}^{\top}(t+\tau)}}_{\xrightarrow[t\to\infty]{}0} + \underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}_{\xrightarrow[t\to\infty]{}0},
-\end{aligned}$$
-
-which implies that the long-time covariance function is the $t\to \infty$ limit of $\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)}$:
-
-$$\begin{aligned}
+\end{aligned}
+$$
+which implies that the long-time covariance function is the $t\to \infty$ limit of $\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)}$: 
+$$
+\begin{aligned}
 \lim_{t\to \infty}
 \ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} 
 &= 
@@ -78,13 +77,14 @@ $$\begin{aligned}
 	\lim_{t\to\infty}
 	\int_{-\infty}^{t}
 	\exp\set{-\mathbf{M}(t-t')}\mathbf{D}\mathbf{D}^{\top}\exp\set{-\mathbf{M}^{\top}(t+\tau-t')} \ dt',
-\end{aligned}$$
-
+\end{aligned}
+$$
 where in the last line we used that the white noise process $\boldsymbol{\xi}(t)$ has a $\delta$ correlation in time. 
 
 ### The Lyapunov equation.
 
 Let $\pmb{\Sigma}:=\ang{\mathbf{r}(t),\mathbf{r}^\top(t)}$ be the (instantaneous, at each $t$) stationary covariance matrix. We may evaluate this quantity algebraically as
+
 $$
 \begin{aligned}
 	\mathbf{M}\pmb{\Sigma} + \pmb{\Sigma}\mathbf{M}^{\top}
@@ -111,9 +111,10 @@ $$
 	&=\mathbf{D}\mathbf{D}^\top.
 \end{aligned}
 $$
+
 This is called the **Lyapunov equation**. 
 
-> [!WARNING]- Remark.
+> [!REMARK]- Remark
 > In the last equality, we take limits 
 > $$ 
 > \lim_{t' \to -\infty} \exp\set{-\mathbf{M}(t-t')} \qquad \text{and} \qquad \lim_{t' \to -\infty} \exp\set{-\mathbf{M}^{\top}(t-t')}
@@ -129,12 +130,12 @@ This is called the **Lyapunov equation**.
 > This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
 > 
 > Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
-
-^a3f76a
+^adf0fd
 
 ## Time correlation matrix in stationary state. 
 
 As computed above and using the fact that $\mathbf{DD}^{\top}= \mathbf{M}\bf{\Sigma} + \bf{\Sigma}\bf{M}^\top$, if $t > s$, 
+
 $$
 \begin{aligned}
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(s)}
@@ -152,9 +153,10 @@ $$
 	\exp\set{-\mathbf{M}\pa{t-s}}\boldsymbol{\Sigma}.
 \end{aligned}
 $$
+
 Likewise, if $s > t$, 
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(s)}
 	&=
 	\int_{-\infty}^{t}
@@ -162,54 +164,53 @@ $$
 	&= 
 	\int_{-\infty}^{t} \frac{d}{dt'} \bra{\exp\set{-\mathbf{M}(t-t')}\boldsymbol{\Sigma} \exp\set{-\mathbf{M}^{\top}(s-t')}} \ dt' \\
 	&= \boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}(s-t)}.
-\end{aligned}
-$$
+\end{aligned}$$
+
 > [!NOTE] Note
 > As expected of a stationary solution, the correlation function depends only on time lag $h=|s-t|$. 
 
-Define $\mathbf{\tilde{C}}(t-s) = \ang{\mathbf{r}(t),\mathbf{r}^{\top}(s)}$. If $h = s-t$,  Then we may write 
-$$
-\boxed{
-\mathbf{\tilde{C}}(h) = 
+Define $\widetilde{\mathbf{C}}(t-s) = \ang{\mathbf{r}(t),\mathbf{r}^{\top}(s)}$. If $h = s-t$,  Then we may write 
+$$\boxed{
+\widetilde{\mathbf{C}}(h) = 
 \begin{cases}
 	\exp\set{\mathbf{M}h}\boldsymbol{\Sigma}, & h <0\\[10pt]
 	\boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}h}, & h > 0 
-\end{cases}}
-$$
+\end{cases}}$$
 
 ## Long-time covariance matrix.
 
 The spectrum matrix is the Fourier transform of the correlation matrix, 
-$$
-\begin{aligned}
+$$\begin{aligned}
 	\mathbf{S}(\omega) 
 	= 
 	\int_{-\infty}^{\infty} e^{-2\pi i\omega h} \mathbf{\tilde{C}}(h)\ dh.
-\end{aligned}
-$$
+\end{aligned}$$
+
 Then $\mathbf{S}(0)=\int_{-\infty}^\infty \mathbf{\tilde{C}}(h) \ dh$. We may also compute this as follows:
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 	\mathbf{S}(0) 
 	&= 
 	\int_0^{\infty} \boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}h} \ dh + \int_{-\infty}^{0}\exp\set{\mathbf{M}h}\boldsymbol{\Sigma} \ dh \\
 	&= 
 	\boldsymbol{\Sigma}\pa{\mathbf{M}^{\top}}^{-1} + \mathbf{M}^{-1}\boldsymbol{\Sigma},
-\end{aligned}
-$$
+\end{aligned}$$
+
 and so 
-$$
-\mathbf{M}\mathbf{S}(0)\mathbf{M}^{\top} = \mathbf{M}\boldsymbol{\Sigma} + \boldsymbol{\Sigma}\mathbf{M}^{\top}= \mathbf{DD}^\top
-$$
-This gives 
-$$
-\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh
+$$\mathbf{M}\mathbf{S}(0)\mathbf{M}^{\top} = \mathbf{M}\boldsymbol{\Sigma} + \boldsymbol{\Sigma}\mathbf{M}^{\top}= \mathbf{DD}^\top$$
+
+This gives
+
+$$\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh
 =\mathbf{S}(0) 
 = \mathbf{M}^{-1}\mathbf{D}\mathbf{D}^\top\pa{\mathbf{M}^{\top}}^{-1}
 =
-\mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
-$$
+\mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.$$
+
 We define the **long-time covariance** precisely this quantity:
 $$
 	\mathbf{C}:=\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh = \mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
 $$
+$$\def\RR{{\bf R}}
+   \def\bold#1{{\bf #1}}$$
+
