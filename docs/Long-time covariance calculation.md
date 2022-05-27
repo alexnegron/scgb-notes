@@ -33,26 +33,21 @@ $$
 Hence in the following calculations, for notational simplicity, we will use $\mathbf{r}(t)$ in place of $\delta \mathbf{r}(t)$.
 
 We make the notations
-$$
-	\Cov(\mathbf{r}(t), \mathbf{r}(s)) =: \ang{\mathbf{r}(t), \mathbf{r}(s)} 
+$$\Cov(\mathbf{r}(t), \mathbf{r}(s)) =: \ang{\mathbf{r}(t), \mathbf{r}(s)} 
 	= 
 	\E\bra{\pa{\mathbf{r}(t)-\E\bra{\mathbf{r}(t)}}\pa{\mathbf{r}(s)-\E\bra{\mathbf{r}(s)}}^\top} 
 	= 
-	\ang{\pa{\mathbf{r}(t) - \ang{\mathbf{r}(t)}}\pa{\mathbf{r}(s) - \ang{\mathbf{r}(s)}}^\top}.
-$$
+	\ang{\pa{\mathbf{r}(t) - \ang{\mathbf{r}(t)}}\pa{\mathbf{r}(s) - \ang{\mathbf{r}(s)}}^\top}.$$
 For $s=t+\tau$ where $\tau > 0$, we have 
-$$
-\begin{aligned}
+$$\begin{aligned}
 	\ang{\pa{\mathbf{r}(t)-\ang{\mathbf{r}(t)}}\pa{\mathbf{r}(t+\tau)-\ang{\mathbf{r}(t+\tau)}}^\top}
 	&=
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)-\ang{\mathbf{r}(t)}\mathbf{r}^{\top}(t+\tau) - \mathbf{r}(t)\ang{\mathbf{r}(t+\tau)}^{\top} + \ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}\\
 	&=
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} - 2\underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}^{\top}(t+\tau)}}_{\xrightarrow[t\to\infty]{}0} + \underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}_{\xrightarrow[t\to\infty]{}0},
-\end{aligned}
-$$
+\end{aligned}$$
 which implies that the long-time covariance function is the $t\to \infty$ limit of $\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)}$: 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \lim_{t\to \infty}
 \ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} 
 &= 
@@ -78,8 +73,7 @@ $$
 	\lim_{t\to\infty}
 	\int_{-\infty}^{t}
 	\exp\set{-\mathbf{M}(t-t')}\mathbf{D}\mathbf{D}^{\top}\exp\set{-\mathbf{M}^{\top}(t+\tau-t')} \ dt',
-\end{aligned}
-$$
+\end{aligned}$$
 where in the last line we used that the white noise process $\boldsymbol{\xi}(t)$ has a $\delta$ correlation in time. 
 
 ### The Lyapunov equation.
