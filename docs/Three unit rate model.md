@@ -1,3 +1,20 @@
+---
+$$
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\prob}{\mathbb{P}}
+\DeclareMathOperator{\qprob}{\mathbb{Q}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\ang}[1]{\left<#1\right>}
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+$$
+---
+
 # Three unit rate model
 
 ## Model.

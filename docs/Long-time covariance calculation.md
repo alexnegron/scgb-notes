@@ -1,3 +1,4 @@
+---
 $$
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Corr}{Corr}
@@ -12,6 +13,8 @@ $$
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 $$
+---
+
 # Long-time covariance calculation
 
 In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
@@ -52,8 +55,11 @@ $$\begin{aligned}
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} - 2\underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}^{\top}(t+\tau)}}_{\xrightarrow[t\to\infty]{}0} + \underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}_{\xrightarrow[t\to\infty]{}0},
 \end{aligned}
 $$
+
 which implies that the long-time covariance function is the $t\to \infty$ limit of $\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)}$: 
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \lim_{t\to \infty}
 \ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} 
 &= 
@@ -79,7 +85,9 @@ $$\begin{aligned}
 	\lim_{t\to\infty}
 	\int_{-\infty}^{t}
 	\exp\set{-\mathbf{M}(t-t')}\mathbf{D}\mathbf{D}^{\top}\exp\set{-\mathbf{M}^{\top}(t+\tau-t')} \ dt',
-\end{aligned}$$
+\end{aligned}
+$$
+
 
 where in the last line we used that the white noise process $\boldsymbol{\xi}(t)$ has a $\delta$ correlation in time. 
 
