@@ -13,7 +13,6 @@ $$
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 $$
-
 # Three unit rate model
 
 ## Model.
