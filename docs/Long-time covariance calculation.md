@@ -14,7 +14,7 @@ $$
 $$
 # Long-time covariance calculation
 
-In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+In [[Computational Neuroscience/SURF, 2021-2022/Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
 $$
 \frac{d}{dt}\delta \mathbf{r} = -\underbrace{\pmb{\tau}^{-1}\pa{\mathbf{1}-\mathbf{W}}}_{\mathbf{M}}\delta \mathbf{r} + \underbrace{\sqrt{2} \pmb{\tau}^{-1} \mathbf{S}}_{\mathbf{D}} \pmb{\xi} = -\mathbf{M} \delta \mathbf{r} + \mathbf{D} \pmb{\xi}.
 $$
@@ -113,24 +113,6 @@ $$
 $$
 This is called the **Lyapunov equation**. 
 
->[!REMARK]
-> In the last equality, we take limits 
-> $$ 
-> \lim_{t' \to -\infty} \exp\set{-\mathbf{M}(t-t')} \qquad \text{and} \qquad \lim_{t' \to -\infty} \exp\set{-\mathbf{M}^{\top}(t-t')}
-> $$ 
-> which is equivalent to looking at $\lim\limits_{t\to \infty} e^{\mathbf{M}t}$.  Suppose $\mathbf{M}$ is diagonalizable: 
-> $$
-> \mathbf{M} = \mathbf{U}^{-1}\boldsymbol{\Lambda}\mathbf{U}, \qquad \boldsymbol{\Lambda} = \text{diag}\pa{\lambda_1,\lambda_2,\ldots,\lambda_n}
->$$
-> Then 
-> $$ e^{t\mathbf{M}} 
-> = \mathbf{U}^{-1}e^{t\boldsymbol{\Lambda}}\mathbf{U} 
-> = \mathbf{U}^{-1}\pa{\text{diag}\pa{e^{\lambda_1t},e^{\lambda_2t},\ldots,e^{\lambda_n t}}}\mathbf{U}.$$
-> This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
-> 
-> Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
-
-
 > [!WARNING]- Remark.
 > In the last equality, we take limits 
 > $$ 
@@ -147,12 +129,6 @@ This is called the **Lyapunov equation**.
 > This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
 > 
 > Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
-
-
-
-
-
-
 
 ## Time correlation matrix in stationary state. 
 
@@ -186,8 +162,8 @@ $$
 	&= \boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}(s-t)}.
 \end{aligned}
 $$
->[!NOTE]
->As expected of a stationary solution, the correlation function depends only on time lag $h=|s-t|$. 
+> [!NOTE] Note
+> As expected of a stationary solution, the correlation function depends only on time lag $h=|s-t|$. 
 
 Define $\mathbf{\tilde{C}}(t-s) = \ang{\mathbf{r}(t),\mathbf{r}^{\top}(s)}$. If $h = s-t$,  Then we may write 
 $$
