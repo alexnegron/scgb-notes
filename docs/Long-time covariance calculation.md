@@ -14,7 +14,7 @@ $$
 $$
 # Long-time covariance calculation
 
-In the [[scgb-notes/docs/Three unit rate model|rate model note]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+In the [rate model note](<scgb-notes/docs/three unit rate model.md>), we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
 $$
 \frac{d}{dt}\delta \mathbf{r} = -\underbrace{\pmb{\tau}^{-1}\pa{\mathbf{1}-\mathbf{W}}}_{\mathbf{M}}\delta \mathbf{r} + \underbrace{\sqrt{2} \pmb{\tau}^{-1} \mathbf{S}}_{\mathbf{D}} \pmb{\xi} = -\mathbf{M} \delta \mathbf{r} + \mathbf{D} \pmb{\xi}.
 $$
@@ -26,19 +26,22 @@ with mean $\ang{\delta \mathbf{r}(t)} = \exp\set{-\mathbf{M}t}\ang{\delta \mathb
 
 ## Long-time covariance function.
 
-We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[scgb-notes/docs/Long-time covariance calculation#^a3f76a|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
+We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[scgb-notes/docs/long-time covariance calculation#^a3f76a|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
 $$
 \Cov(\mathbf{r}(t), \mathbf{r}(s)) = \Cov(\mathbf{r}(t)-\mathbf{\bar{r}}, \mathbf{r}(s)-\mathbf{\bar{r}}) = \Cov(\delta \mathbf{r}(t), \delta\mathbf{r}(s)).
 $$
 Hence in the following calculations, for notational simplicity, we will use $\mathbf{r}(t)$ in place of $\delta \mathbf{r}(t)$.
 
 We make the notations
+
 $$\Cov(\mathbf{r}(t), \mathbf{r}(s)) =: \ang{\mathbf{r}(t), \mathbf{r}(s)} 
 	= 
 	\E\bra{\pa{\mathbf{r}(t)-\E\bra{\mathbf{r}(t)}}\pa{\mathbf{r}(s)-\E\bra{\mathbf{r}(s)}}^\top} 
 	= 
 	\ang{\pa{\mathbf{r}(t) - \ang{\mathbf{r}(t)}}\pa{\mathbf{r}(s) - \ang{\mathbf{r}(s)}}^\top}.$$
+	
 For $s=t+\tau$ where $\tau > 0$, we have 
+
 $$\begin{aligned}
 	\ang{\pa{\mathbf{r}(t)-\ang{\mathbf{r}(t)}}\pa{\mathbf{r}(t+\tau)-\ang{\mathbf{r}(t+\tau)}}^\top}
 	&=
@@ -46,6 +49,7 @@ $$\begin{aligned}
 	&=
 	\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)} - 2\underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}^{\top}(t+\tau)}}_{\xrightarrow[t\to\infty]{}0} + \underbrace{\ang{\mathbf{r}(t)}\ang{\mathbf{r}(t+\tau)}^{\top}}_{\xrightarrow[t\to\infty]{}0},
 \end{aligned}$$
+
 which implies that the long-time covariance function is the $t\to \infty$ limit of $\ang{\mathbf{r}(t)\mathbf{r}^{\top}(t+\tau)}$: 
 $$\begin{aligned}
 \lim_{t\to \infty}
@@ -74,6 +78,7 @@ $$\begin{aligned}
 	\int_{-\infty}^{t}
 	\exp\set{-\mathbf{M}(t-t')}\mathbf{D}\mathbf{D}^{\top}\exp\set{-\mathbf{M}^{\top}(t+\tau-t')} \ dt',
 \end{aligned}$$
+
 where in the last line we used that the white noise process $\boldsymbol{\xi}(t)$ has a $\delta$ correlation in time. 
 
 ### The Lyapunov equation.

@@ -35,7 +35,6 @@ where:
 
 We may drop the $\bra{\cdot}_+$ under the assumption that the threshold is never sampled for sufficiently strong inputs. In vector form, these equations are 
 
-
 $$\begin{aligned}
 	\underbrace{\begin{bmatrix}
 		\tau_{E_1} & 0 & 0 \\
