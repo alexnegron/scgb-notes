@@ -176,25 +176,31 @@ $$\begin{aligned}
 	&= \boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}(s-t)}.
 \end{aligned}$$
 
-> [!NOTE] Note
+> [!NOTE]- Note
 > As expected of a stationary solution, the correlation function depends only on time lag $h=|s-t|$. 
 
 Define $\widetilde{\mathbf{C}}(t-s) = \ang{\mathbf{r}(t),\mathbf{r}^{\top}(s)}$. If $h = s-t$,  Then we may write 
-$$\boxed{
+
+$$
 \widetilde{\mathbf{C}}(h) = 
 \begin{cases}
 	\exp\set{\mathbf{M}h}\boldsymbol{\Sigma}, & h <0\\[10pt]
 	\boldsymbol{\Sigma}\exp\set{-\mathbf{M}^{\top}h}, & h > 0 
-\end{cases}}$$
+\end{cases}
+$$
+
 
 ## Long-time covariance matrix.
 
 The spectrum matrix is the Fourier transform of the correlation matrix, 
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 	\mathbf{S}(\omega) 
 	= 
-	\int_{-\infty}^{\infty} e^{-2\pi i\omega h} \mathbf{\tilde{C}}(h)\ dh.
-\end{aligned}$$
+	\int_{-\infty}^{\infty} e^{-2\pi i\omega h} \widetilde{\mathbf{C}}(h)\ dh.
+\end{aligned}
+$$
 
 Then $\mathbf{S}(0)=\int_{-\infty}^\infty \mathbf{\tilde{C}}(h) \ dh$. We may also compute this as follows:
 
@@ -207,20 +213,21 @@ $$\begin{aligned}
 \end{aligned}$$
 
 and so 
+
 $$\mathbf{M}\mathbf{S}(0)\mathbf{M}^{\top} = \mathbf{M}\boldsymbol{\Sigma} + \boldsymbol{\Sigma}\mathbf{M}^{\top}= \mathbf{DD}^\top$$
 
 This gives
 
-$$\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh
-=\mathbf{S}(0) 
-= \mathbf{M}^{-1}\mathbf{D}\mathbf{D}^\top\pa{\mathbf{M}^{\top}}^{-1}
-=
-\mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.$$
+$$
+	\int_{-\infty}^{\infty} \widetilde{\mathbf{C}}(h) \ dh
+	=\mathbf{S}(0) 
+	= \mathbf{M}^{-1}\mathbf{D}\mathbf{D}^\top\pa{\mathbf{M}^{\top}}^{-1}
+	=
+	\mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
+$$
 
 We define the **long-time covariance** precisely this quantity:
-$$
-	\mathbf{C}:=\int_{-\infty}^{\infty} \mathbf{\tilde{C}}(h) \ dh = \mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
-$$
-$$\def\RR{{\bf R}}
-   \def\bold#1{{\bf #1}}$$
 
+$$
+	\mathbf{C}:=\int_{-\infty}^{\infty} \widetilde{\mathbf{C}}(h) \ dh = \mathbf{M}^{-1}\mathbf{D}\pa{\mathbf{M}^{-1}\mathbf{D}}^\top.
+$$
