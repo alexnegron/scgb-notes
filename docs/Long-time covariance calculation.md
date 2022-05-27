@@ -14,7 +14,7 @@ $$
 $$
 # Long-time covariance calculation
 
-In [[Computational Neuroscience/SURF, 2021-2022/Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
+In [[scgb-notes/docs/Long-time covariance calculation|the rate model note]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
 $$
 \frac{d}{dt}\delta \mathbf{r} = -\underbrace{\pmb{\tau}^{-1}\pa{\mathbf{1}-\mathbf{W}}}_{\mathbf{M}}\delta \mathbf{r} + \underbrace{\sqrt{2} \pmb{\tau}^{-1} \mathbf{S}}_{\mathbf{D}} \pmb{\xi} = -\mathbf{M} \delta \mathbf{r} + \mathbf{D} \pmb{\xi}.
 $$
@@ -26,7 +26,7 @@ with mean $\ang{\delta \mathbf{r}(t)} = \exp\set{-\mathbf{M}t}\ang{\delta \mathb
 
 ## Long-time covariance function.
 
-We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[Computational Neuroscience/SURF, 2021-2022/Long-time covariance calculation#^adf0fd|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
+We now compute the $t\to \infty$ covariance function. Observe $\lim_{t \to \infty} \ang{\delta \mathbf{r}(t)} = 0$ (see the [[scgb-notes/docs/Long-time covariance calculation#^a3f76a|Remark]] below for the details about this calculation). As an operator, $\Cov(\cdot, \cdot)$ is shift-invariant in each argument, thus 
 $$
 \Cov(\mathbf{r}(t), \mathbf{r}(s)) = \Cov(\mathbf{r}(t)-\mathbf{\bar{r}}, \mathbf{r}(s)-\mathbf{\bar{r}}) = \Cov(\delta \mathbf{r}(t), \delta\mathbf{r}(s)).
 $$
@@ -129,6 +129,8 @@ This is called the **Lyapunov equation**.
 > This expression shows that the convergence as $t\to \infty$ depends on eigenvalues. In particular, we need their real parts to be $<0$. In this case, $e^{t\mathbf{A}} \xrightarrow[t\to\infty]{} 0$. 
 > 
 > Because we assume the network is stable, $\mathbf{M}$ must have eigenvalues with positive real part. 
+
+^a3f76a
 
 ## Time correlation matrix in stationary state. 
 
