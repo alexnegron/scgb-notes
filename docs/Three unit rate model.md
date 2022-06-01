@@ -1,4 +1,3 @@
----
 $$
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Corr}{Corr}
@@ -13,9 +12,6 @@ $$
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 $$
-header-includes: |
-  \usepackage{preamble}
----
 
 # Three unit rate model
 
