@@ -1,7 +1,7 @@
 site_name: SCGB Notes
 
 theme:
-    name: 'material'
+    name: material
     palette:
 
     # Light mode
@@ -21,6 +21,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+    
 
 # Extensions
 markdown_extensions:

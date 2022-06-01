@@ -1,7 +1,6 @@
----
 $$
 \DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\Corr}{Corr}
+ \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\prob}{\mathbb{P}}
 \DeclareMathOperator{\qprob}{\mathbb{Q}}
@@ -12,10 +11,24 @@ $$
 \newcommand{\bra}[1]{\left[#1\right]}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\paren}[1]{\mathopen{}\left( {#1}_{{}_{}}\,\negthickspace\right)\mathclose{}}
+\newcommand{\bracket}[1]{\mathopen{}\left[ {#1}_{{}_{}}\,\negthickspace\right]\mathclose{}}
+\newcommand{\se}[1]{\mathopen{}\left\{ {#1}_{{}_{}}\,\negthickspace\right\}\mathclose{}}
 $$
----
 
 # Long-time covariance calculation
+
+Ok. Let's try out these new macros.
+
+$$
+	\paren{1+\paren{x^2}}.
+$$
+What about: 
+
+$$
+	\tau_i \dot{r}_i(t) = - r_i(t) + \se{\mu_i +\sum\limits_{j\in\se{E_1,E_2,I}} W_{ij}r_j(t)+ \sqrt{2\sigma_i}\xi_i(t)}_+, \qquad i \in \se{E_1,E_2,I}
+$$
+
 
 In [[Three unit rate model|the note defining the rate model]], we wrote down a linear SDE characterizing the dynamics of the fluctuations $\delta \mathbf{r}.$ This SDE is given by: 
 
@@ -24,7 +37,7 @@ In [[Three unit rate model|the note defining the rate model]], we wrote down a l
 The solution is obtained as
 
 $$
-	\delta \mathbf{r}(t) = \exp\set{-\mathbf{M}t}\delta\mathbf{r}(0) + \int_{-\infty}^{t}\exp\set{-\mathbf{M}\pa{t-t'}}\mathbf{D}\ \underbrace{d\mathbf{W}(t')}_{\boldsymbol{\xi}(t')}
+	\delta \mathbf{r}(t) = \exp\left\{-\mathbf{M}t\right\}\delta\mathbf{r}(0) + \int_{-\infty}^{t}\exp\left\{-\mathbf{M}\pa{t-t'}\right\}\mathbf{D}\ \underbrace{d\mathbf{W}(t')}_{\boldsymbol{\xi}(t')}
 $$
 
 with mean $\ang{\delta \mathbf{r}(t)} = \exp\set{-\mathbf{M}t}\ang{\delta \mathbf{r}(0)}$ (expectation of integral is given by an [Ito integral property](marginnote3app://note/5CC92031-57BF-4688-9A49-DB3BCBB8BE43)).
